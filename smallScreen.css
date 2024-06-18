@@ -1,0 +1,164 @@
+@media screen and ( max-width:600px ){
+  .left {
+    position:absolute;
+    left: -200%;
+  }
+  body{
+    margin: 0;
+    padding: 0;
+  }
+  .right{
+    width: 100vw;
+    margin: 0;
+  }
+  .cards{
+    grid-template-columns: 1fr;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  .card{
+      align-items: center;
+  }
+  .play-bar{
+    position: sticky;
+    width: 100%;
+    padding: 18px 0;
+    margin: 0;
+    justify-content: center;
+  }
+  .play-bar-left,.play-bar-right{
+    position: absolute;
+    left: -200%;
+  }
+  #seek-bar{
+    max-width: 300px;
+  }
+  .play-bar-right{
+    margin-right: 0px;
+  }
+  .your-playlist-container,.spotify-playlist-container{
+    margin: 0;
+    padding: 0;
+  }
+  .your-playlist-top,.spotify-playlist-top{
+    width: 90%;
+  }
+}
+
+
+@media screen and ( max-width:800px) and (min-width:600px){
+  .left {
+    position:absolute;
+    left: -200%;
+  }
+  body{
+    margin: 0;
+    padding: 0;
+  }
+  .right{
+    width: 100vw;
+    margin: 0;
+  }
+  .cards{
+    grid-template-columns: 1fr 1fr;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  .card{
+      align-items: center;
+  }
+  .play-bar{
+    position: sticky;
+    width: 100%;
+    padding: 18px 0;
+    margin: 0;
+    justify-content: center;
+  }
+  .play-bar-left,.play-bar-right{
+    position: absolute;
+    left: -200%;
+  }
+  #seek-bar{
+    max-width: 300px;
+  }
+  .play-bar-right{
+    margin-right: 0px;
+  }
+  .your-playlist-container,.spotify-playlist-container{
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+@media screen and ( max-width:1300px) and (min-width:800px){
+  .left {
+    position:absolute;
+    left: -200%;
+  }
+  body{
+    margin: 0;
+    padding: 0;
+  }
+  .right{
+    width: 100vw;
+    margin: 0;
+  }
+  .cards{
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  .play-bar{
+    position: sticky;
+    width: 100%;
+    padding: 12px 0;
+    margin: 0;
+    justify-content: center;
+  }
+  .play-bar-left,.play-bar-right{
+    position: absolute;
+    left: -200%;
+  }
+  #seek-bar{
+    max-width: 300px;
+  }
+  .play-bar-right{
+    margin-right: 0px;
+  }
+  .your-playlist-container,.spotify-playlist-container{
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media screen and ( max-width:400px ){
+  #seek-bar{
+    max-width: 200px;
+  }
+  .your-playlist-top,.spotify-playlist-top{
+    width: 90%;
+  }
+  .right-header-right .signup{
+    color: rgb(172, 172, 172);
+    font-size: 12px;
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+    transition: all 0.15s;
+  }
+  .card{
+      align-items: center;
+  }
+  .login{
+    font-size: 12px;
+    padding: 12px 30px;
+    font-weight: 700;
+  }
+  .right-header{
+    justify-content: space-between;
+  }
+}

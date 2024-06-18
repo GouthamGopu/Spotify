@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="smallScreen.css">
+  <link rel="stylesheet" href="utility.css">
+  <title>Spotify - Web Player: Music for everyone</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <div class="container flex">
+    <div class="left flex">
+      <div class="top flex justify-center">
+        <a href="index.html">
+          <div class="logo">
+            <img class="pointer" src="svgs/logo.svg" alt="logo">
+          </div>
+        </a>
+        <a href="index.html">
+          <div class="home flex item-center">
+            <img class="pointer" src="svgs/home.svg" alt="home">
+            <p class="pointer">Home</p>
+          </div>
+        </a>
+        <div class="search flex item-center">
+          <img class="pointer" src="svgs/search.svg" alt="search">
+          <p class="pointer">Search</p>
+        </div>
+      </div>
+      <div class="bottom flex">
+        <div class="bottom-top flex">
+          <div class="bottom-top-left flex">
+            <img class="pointer" src="svgs/library.svg" alt="library">
+            <p class="pointer">Your library</p>
+            <div class="tooltip">Collapse Your Library</div>
+          </div>
+          <div class="bottom-top-right ">
+            <img class="pointer" src="svgs/plus.svg" alt="plus">
+            <div class="tooltip">Create playlist or folder</div>
+          </div>
+        </div>
+        <div class="bottom-bottom flex">
+          <div class="box">
+            <span class="head context-menu block">Create your first playlist</span>
+            <span class="sub-head context-menu block">It's easy,we'll help you</span>
+            <button class="btn-white">Create playlist</button>
+          </div>
+          <div class="box">
+            <span class="head context-menu block">Let's find some podcasts to follow</span>
+            <span class="sub-head context-menu block">We'll keep you updated on new episodes</span>
+            <button class="btn-white">Browse podcasts</button>
+          </div>
+          <div class="footer">
+            <div class="links-container">
+              <div class="links inline">
+                <a href="https://www.spotify.com/in-en/legal/" id="">
+                  <span>Legal</span>
+                </a>
+              </div>
+              <div class="links inline">
+                <a href="https://www.spotify.com/in-en/safetyandprivacy/" id="">
+                  <span>Safety &amp; Privacy Center</span>
+                </a>
+              </div>
+              <div class="links inline">
+                <a href="https://www.spotify.com/in-en/legal/privacy-policy/" id="">
+                  <span>Privacy Policy</span>
+                </a>
+              </div>
+              <div class="links inline">
+                <a href="https://www.spotify.com/in-en/legal/cookies-policy/" id="">
+                  <span>Cookies</span>
+                </a>
+              </div>
+              <div class="links inline">
+                <a href="https://www.spotify.com/in-en/legal/privacy-policy/#s3" id="">
+                  <span>About Ads</span>
+                </a>
+              </div>
+              <div class="links inline">
+                <a href="https://www.spotify.com/in-en/accessibility/" id="">
+                  <span>Accessibility</span>
+                </a>
+              </div>
+            </div>
+            <div class="links inline">
+              <a href="https://www.spotify.com/legal/cookies-policy/">
+                <span>Cookies</span>
+              </a>
+            </div>
+            <div class="english-button">
+              <button class="btn-black"><img src="svgs/english.svg" alt="globe"> English</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="right-head">
+        <div class="right-header flex">
+          <div class="right-header-left flex">
+            <div id="left-arrow" class="arrows flex justify-center">
+              <img src="svgs/left.svg" alt="left">
+            </div>
+            <div id="right-arrow" class="arrows flex justify-center">
+              <img src="svgs/right.svg" alt="right">
+            </div>
+          </div>
+          <div class="right-header-right flex item-center">
+            <button class="pointer signup">Sign up</button>
+            <button class="btn-white login">Log in</button>
+          </div>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="your-playlist-container">
+          <div class="your-playlist-top flex">
+            <h2 class="your-playlist pointer">Your Playlist</h2>
+            <span class="show-all your-playlist-show-all  pointer">Show all</span>
+          </div>
+          <div class="your-playlist-cards cards grid">
+            <!-- dynamically loading -->
+          </div>
+        </div>
+        <div class="spotify-playlist-container">
+          <div class="spotify-playlist-top flex">
+            <h2 class="spotify-playlist pointer">Spotify Playlist</h2>
+            <span class="spotify-playlist-show-all show-all pointer">Show all</span>
+          </div>
+          <div class="spotify-playlist-cards cards grid">
+            <!-- dynamically loading -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="play-bar flex">
+    <div class="play-bar-left pointer flex item-center ">
+      <!-- dynamically loading -->
+    </div>
+    <div class="play-bar-center">
+      <div class="play-bar-center-top flex justify-center">
+        <img class="shuffle" width="18px" src="svgs/shuffle.svg" alt="play-bar-svgs">
+        <img class="previous" width="18px" src="svgs/previous.svg" alt="play-bar-svgs">
+        <div class="play-pause flex justify-center pointer">
+          <img class="play playSong" width="18px" src="svgs/play.svg" alt="play-bar-svgs">
+        </div>
+        <img class="next" width="18px" src="svgs/next.svg" alt="play-bar-svgs">
+        <img class="repeat" width="18px" src="svgs/repeat.svg" alt="play-bar-svgs">
+      </div>
+      <div class="play-bar-center-bottom flex justify-center item-center">
+        <span class="present-duration">--/--</span>
+        <input type="range" name="seek-bar" id="seek-bar" value="0" step="0.1">
+        <span class="total-duration">--/--</span>
+      </div>
+    </div>
+    <div class="play-bar-right flex">
+      <div class="svg-container">
+        <img src="svgs/view.svg" alt="view">
+        <div class="view-tooltip tooltip">Now Playing view</div>
+      </div>
+      <div class="svg-container">
+        <img src="svgs/mic.svg" alt="mic">
+        <div class="lyrics-tooltip tooltip">Lyrics</div>
+      </div>
+      <div class="svg-container">
+        <img src="svgs/queue.svg" alt="queue">
+        <div class="queue-tooltip tooltip">Queue</div>
+      </div>
+      <div class="svg-container">
+        <img src="svgs/device.svg" alt="device">
+        <div class="device-tooltip tooltip">Connnect to device</div>
+      </div>
+      <div class="svg-container">
+        <img src="svgs/sound.svg" alt="sound">
+        <div class="sound-tooltip tooltip">Sound</div>
+        <input type="range" name="sound" id="sound" class="sound-range">
+      </div>
+      <div class="svg-container">
+        <img src="svgs/miniplayer.svg" alt="miniPlayer">
+        <div class="miniplayer-tooltip tooltip">Open MiniPlayer</div>
+      </div>
+      <div class="svg-container">
+        <img src="svgs/fullscreen.svg" alt="fullscreen">
+        <div class="fullscreen-tooltip tooltip">FullScreen</div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script src="songs.js"></script>
+</body>
+</html>
