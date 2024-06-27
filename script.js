@@ -88,6 +88,6 @@ function addToPlaylist(image,title,discription){
     <img class="pic" src="${image}">
     <span class="title block">${title}</span>
     <span class="discription block">${discription}</span>
-    <img class="play-button" src="svgs/play.svg" alt="play">
+    <img class="play-button" src="svgs/song-play.svg" alt="play">
     </div>`
 }
