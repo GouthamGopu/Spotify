@@ -117,10 +117,15 @@ function addToSong(id, image, title, discription) {
     <img class="pic" src="${image}">
     <span class="title block">${title}</span>
     <span class="discription block">${discription}</span>
-    <img data-product-id="${id}" class="your-playlist-play-button play-button" src="svgs/play.svg" alt="play">
+    <img data-product-id="${id}" class="your-playlist-play-button play-button" src="svgs/song-play.svg" alt="play">
     </div>`;
 }
 
+function playButttonBaground(imageUrl){
+  document.querySelector('.play-pause').style.backgroundImage = 'url(' + imageUrl + ')';
+  document.querySelector('.play-pause').style.backgroundSize = 'cover';
+  document.querySelector('.play-pause').style.backgroundPosition = 'center';
+}
 
 function playMusic(track, image, title, discription, pause = false) {
   currentSong.src = track;
@@ -128,7 +133,7 @@ function playMusic(track, image, title, discription, pause = false) {
     currentSong.play();
     play.src = "svgs/pause.svg";
   }
-
+  playButttonBaground(image);
 
   playBarLeft.innerHTML = `<img class="current-song-img" height="64" src="${image}" alt="current-song-img">
   <div class="current-song-info flex">
@@ -273,4 +278,78 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+// Keyboard event listeners
+document.addEventListener("keydown", function(event) {
+  // Spacebar key (32)
+  if (event.code === "Space") {
+      togglePlayPause();
+  }
+  // Left arrow key (37) for previous song
+  else if (event.code === "ArrowLeft") {
+      playPreviousSong();
+  }
+  // Right arrow key (39) for next song
+  else if (event.code === "ArrowRight") {
+      playNextSong();
+  }
+  // Up arrow key (38) for volume up
+  else if (event.code === "ArrowUp") {
+      adjustVolume(true); // Increase volume
+  }
+  // Down arrow key (40) for volume down (optional, if needed)
+  else if (event.code === "ArrowDown") {
+      adjustVolume(false); // Decrease volume
+  }
+});
 
+// Function to toggle play/pause
+function togglePlayPause() {
+  if (currentSong.paused) {
+      currentSong.play();
+      play.src = "svgs/pause.svg";
+  } else {
+      currentSong.pause();
+      play.src = "svgs/play.svg";
+  }
+}
+
+// Function to play the next song
+function playNextSong() {
+  let track = currentSong.src.split('/').pop();
+  let currentIndex = songs.findIndex(song => song.link.endsWith(track));
+  if (currentIndex === -1) {
+      console.log(track);
+      return; // Current song not found
+  }
+  let nextIndex = (currentIndex + 1) % songs.length; // Increment and wrap around if necessary
+  let nextSong = songs[nextIndex];
+  playMusic(nextSong.link, nextSong.image, nextSong.title, nextSong.discription);
+}
+
+// Function to play the previous song
+function playPreviousSong() {
+  let track = currentSong.src.split('/').pop();
+  let currentIndex = songs.findIndex(song => song.link.endsWith(track));
+  if (currentIndex === -1) {
+      console.log(track);
+      return; // Current song not found
+  }
+  let previousIndex = (currentIndex - 1 + songs.length) % songs.length; // Decrement and wrap around if necessary
+  let previousSong = songs[previousIndex];
+  playMusic(previousSong.link, previousSong.image, previousSong.title, previousSong.discription);
+}
+
+// Function to adjust volume
+function adjustVolume(increase) {
+  const increment = increase ? 0.1 : -0.1; // Adjust volume by 10%
+  let newVolume = currentSong.volume + increment;
+  if (newVolume < 0) {
+      newVolume = 0; // Ensure volume doesn't go below 0
+  } else if (newVolume > 1) {
+      newVolume = 1; // Ensure volume doesn't exceed 1
+  }
+  currentSong.volume = newVolume;
+  soundRange.value = newVolume * 100; // Update the volume range input visually
+}
+});
