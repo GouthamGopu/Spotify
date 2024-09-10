@@ -114,5 +114,4 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Debugging
-  console.log('Script loaded and DOM content is ready.');
 });
