@@ -353,3 +353,35 @@ function adjustVolume(increase) {
   soundRange.value = newVolume * 100; // Update the volume range input visually
 }
 });
+
+let showAll = false; // Flag to track whether to show all songs
+
+// Function to update the playlist display based on the showAll flag
+function updatePlaylist() {
+  yourPlaylisCards.innerHTML = '';
+  if (showAll) {
+    songs.forEach((song) => {
+      addToSong(song.id, song.image, song.title, song.discription);
+    });
+    yourPlaylistShowall.textContent = "Show Less"; // Change button text to "Show Less"
+  } else {
+    let count = 1;
+    songs.forEach((song) => {
+      if (count <= 5) {
+        addToSong(song.id, song.image, song.title, song.discription);
+      }
+      count++;
+    });
+    yourPlaylistShowall.textContent = "Show All"; // Change button text to "Show All"
+  }
+  addEventListenerToPlayButton(); // Reattach event listeners
+}
+
+// Initial display of playlist
+updatePlaylist();
+
+// Event listener for the "Show All / Show Less" button
+yourPlaylistShowall.addEventListener("click", () => {
+  showAll = !showAll; // Toggle the showAll flag
+  updatePlaylist(); // Update playlist display based on the new flag value
+});
